@@ -24,35 +24,35 @@ const contenitore_padre = document.getElementById('container');
 const post = [
     {
      nome_autore : 'Alessandro',
-     foto_profilo : '01.jpg',
+     foto_profilo : './img/01.jpg',
      data : '02/02/2014',
      testo_del_post : 'sdfndkfdknfdskndskfndlksnfdkslnfkdslnfslnfskflsdnfskfnds',
      numero_di_likes : '54',
     },
     {
         nome_autore : 'Frangeeeee',
-        foto_profilo : '02.jpg',
+        foto_profilo : './img/02.jpg',
         data : 'anno 0',
         testo_del_post : 'sdfndksadsadadsadsafdknfdskndskfndlksnfdkslnfkdslnfslnfskflsdnfskfnds',
         numero_di_likes : '33',
        },
        {
         nome_autore : 'Samueeee',
-        foto_profilo : '03.jpg',
+        foto_profilo : './img/03.jpg',
         data : '02/12/2018',
         testo_del_post : 'sdfndkfdknfdskndskfndlksnfdkslnfkdslnfslnfskflsdnfskfnds',
         numero_di_likes : '4',
        },
        {
         nome_autore : 'Giuen',
-        foto_profilo : '04.jpg',
+        foto_profilo : './img/04.jpg',
         data : '2 ore fa',
         testo_del_post : 'C:\Users\Luca\Desktop\Boolean\Esercizi\js-social-posts\img\photo-1494438639946-1ebd1d20bf85.jpg',
         numero_di_likes : '78',
        },
        {
         nome_autore : 'Piaaa',
-        foto_profilo : '05.jpg',
+        foto_profilo : './img/05.jpg',
         data : '08/09/2020',
         testo_del_post : 'sdfnfddsfdsdkfdknfdskndskfndlksnfdkslnfkdslnfslnfskflsdnfskfnds',
         numero_di_likes : '5854',
@@ -60,6 +60,10 @@ const post = [
 
 ];
 
+
+gen_feed()
+
+function gen_feed() {
 
 //itero tante quanto sono i post da generare
 for (let i = 0; i < post.length; i++) {
@@ -98,4 +102,5 @@ contenitore_padre.innerHTML += `<div class="post">
 </div>            
 </div>`
 
+}
 }
