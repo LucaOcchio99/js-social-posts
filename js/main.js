@@ -10,6 +10,9 @@ card: nome autore, foto profilo, data,
 testo del post, immagine, numero di
 likes.
 
+Per le immagini va bene utilizzare qualsiasi 
+servizio di placeholder ad es: https://picsum.photos/id/237/600/350
+
 - Prendendo come riferimento il layout
 di esempio presente nell’html, stampiamo
 i post del nostro feed.*/
@@ -17,90 +20,94 @@ i post del nostro feed.*/
 /*Creazione array di 5 oggetti con 
 le informazioni necessarie */
 
-//REFERENZE
-const contenitore_padre = document.getElementById('container');
-//console.log(contenitore_padre);
-
-const post = [
-    {
-     nome_autore : 'Alessandro',
-     foto_profilo : './img/01.jpg',
-     data : '02/02/2014',
-     testo_del_post : 'sdfndkfdknfdskndskfndlksnfdkslnfkdslnfslnfskflsdnfskfnds',
-     numero_di_likes : '54',
+const array_social = [
+    { 
+        nome_autore : 'Samuele',
+        foto_profilo : 'https://cdn1.vectorstock.com/i/1000x1000/23/70/man-avatar-icon-flat-vector-19152370.jpg',
+        data : '10 mesi fa',
+        testo_del_post : 'Lorem ipsum dolor sit amet. Et impedit quia ut distinctio cupiditate ex velit explicabo sed tempore magnam qui vitae fugit sed enim voluptas non beatae minus. Et minus commodi quo beatae culpa aut rerum reiciendis ab consectetur tenetur. ',
+        immagine : './img/01.jpg',
+        numero_di_likes : '500',
     },
-    {
-        nome_autore : 'Frangeeeee',
-        foto_profilo : './img/02.jpg',
-        data : 'anno 0',
-        testo_del_post : 'sdfndksadsadadsadsafdknfdskndskfndlksnfdkslnfkdslnfslnfskflsdnfskfnds',
-        numero_di_likes : '33',
-       },
-       {
-        nome_autore : 'Samueeee',
-        foto_profilo : './img/03.jpg',
-        data : '02/12/2018',
-        testo_del_post : 'sdfndkfdknfdskndskfndlksnfdkslnfkdslnfslnfskflsdnfskfnds',
-        numero_di_likes : '4',
-       },
-       {
-        nome_autore : 'Giuen',
-        foto_profilo : './img/04.jpg',
-        data : '2 ore fa',
-        testo_del_post : 'C:\Users\Luca\Desktop\Boolean\Esercizi\js-social-posts\img\photo-1494438639946-1ebd1d20bf85.jpg',
-        numero_di_likes : '78',
-       },
-       {
-        nome_autore : 'Piaaa',
-        foto_profilo : './img/05.jpg',
-        data : '08/09/2020',
-        testo_del_post : 'sdfnfddsfdsdkfdknfdskndskfndlksnfdkslnfkdslnfslnfskflsdnfskfnds',
-        numero_di_likes : '5854',
-       },
-
+    { 
+        nome_autore : 'Elena',
+        foto_profilo : 'https://www.w3schools.com/howto/img_avatar2.png',
+        data : '15/02/2020',
+        testo_del_post : 'Et officia facere quo nesciunt provident est rerum modi et veritatis rerum. Aut adipisci ipsum qui dolorem eveniet qui minima ipsam et ratione quasi quo nisi placeat aut vero rerum et sunt ullam! In fuga velit in aliquam repellat aut quia vitae non dolorum architecto. Est ullam voluptatem in laboriosam placeat cum totam deleniti. ',
+        immagine : './img/02.jpg',
+        numero_di_likes : '253',
+    },
+    { 
+        nome_autore : 'Sofia',
+        foto_profilo : 'https://www.w3schools.com/w3images/avatar6.png',
+        data : '19/06/2014',
+        testo_del_post : '33 natus illum ab velit minus sit officiis tempora. Sed earum repellendus ut animi nobis ut totam voluptas ut impedit quae et corrupti praesentium. Eum velit nihil est quidem voluptate ad enim commodi non quod consequuntur. ',
+        immagine : './img/03.jpg',
+        numero_di_likes : '478',
+    },
+    { 
+        nome_autore : 'Marco',
+        foto_profilo : 'https://www.w3schools.com/w3images/avatar2.png',
+        data : '05/12/2021',
+        testo_del_post : 'pSit quam necessitatibus et doloribus aliquid id architecto recusandae et voluptatibus nisi et voluptatem rerum! Enim cumque est odit quas qui totam expedita rem voluptas natus id laborum delectus. Et eius eaque qui cumque veniam et mollitia omnis id galisum blanditiis. ost',
+        immagine : './img/04.jpg',
+        numero_di_likes : '600',
+    },
+    { 
+        nome_autore : 'Paolo',
+        foto_profilo : 'https://nisargresort.in/wp-content/uploads/2019/11/new-man-avatar-icon-flat-vector-19152349.jpg',
+        data : '25/06/2018',
+        testo_del_post : 'Qui perferendis praesentium et molestiae dolore non voluptas sint aut maiores magni aut repudiandae assumenda qui vitae quisquam aut dolor laudantium. Ad corporis minus hic voluptates voluptatem et reiciendis deleniti. Ea neque sapiente At voluptas provident ad temporibus esse ea doloribus eligendi',
+        immagine : './img/05.jpg',
+        numero_di_likes : '740',
+    }
 ];
 
 
-gen_feed()
 
-function gen_feed() {
+//referenza 
+const container = document.getElementById('container');
 
-//itero tante quanto sono i post da generare
-for (let i = 0; i < post.length; i++) {
-    const post_singolo = post[i];
-    console.log(post_singolo) //--> estrapolo ogni singolo oggetto
-    
-//inserisco l'html da implementare, tramite js,
-contenitore_padre.innerHTML += `<div class="post">
-<div class="post__header">
-    <div class="post-meta">                    
-        <div class="post-meta__icon">
-            <img class="profile-pic" src="${post_singolo.foto_profilo}" alt="${post_singolo.nome_autore}">                    
-        </div>
-        <div class="post-meta__data">
-            <div class="post-meta__author">${post_singolo.nome_autore}</div>
-            <div class="post-meta__time">${post_singolo.data}</div>
-        </div>                    
-    </div>
-</div>
-<div class="post__text">${post_singolo.testo_del_post}</div>
-<div class="post__image">
-    <img src="${post_singolo.foto_profilo}" alt="fsfs">
-</div>
-<div class="post__footer">
-    <div class="likes js-likes">
-        <div class="likes__cta">
-            <a class="like-button  js-like-button" href="#" data-postid="1">
-                <i class="like-button__icon fas fa-thumbs-up" aria-hidden="true"></i>
-                <span class="like-button__label">Mi Piace</span>
-            </a>
-        </div>
-        <div class="likes__counter">
-            Piace a <b id="like-counter-1" class="js-likes-counter">${post_singolo.numero_di_likes}</b> persone
-        </div>
-    </div> 
-</div>            
-</div>`
+generatore_post(array_social, container);
 
+function generatore_post(array_social, container) {
+
+container.innerHTML = '';
+
+for (let i = 0; i < array_social.length; i++) {
+    const post_social = array_social[i];
+    //console.log(post_social);
+container.innerHTML += `
+<div class="post">
+            <div class="post__header">
+                <div class="post-meta">                    
+                    <div class="post-meta__icon">
+                        <img class="profile-pic" src="${post_social.foto_profilo}" alt="Phil Mangione">                    
+                    </div>
+                    <div class="post-meta__data">
+                        <div class="post-meta__author">${post_social.nome_autore}</div>
+                        <div class="post-meta__time">${post_social.data}</div>
+                    </div>                    
+                </div>
+            </div>
+            <div class="post__text">${post_social.testo_del_post}</div>
+            <div class="post__image">
+                <img src="${post_social.immagine}" alt="">
+            </div>
+            <div class="post__footer">
+                <div class="likes js-likes">
+                    <div class="likes__cta">
+                        <a class="like-button  js-like-button" href="#" data-postid="1">
+                            <i class="like-button__icon fas fa-thumbs-up" aria-hidden="true"></i>
+                            <span class="like-button__label">Mi Piace</span>
+                        </a>
+                    </div>
+                    <div class="likes__counter">
+                        Piace a <b id="like-counter-1" class="js-likes-counter">${post_social.numero_di_likes}</b> persone
+                    </div>
+                </div> 
+            </div>            
+        </div> 
+`
 }
 }
